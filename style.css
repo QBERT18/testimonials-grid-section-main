@@ -1,0 +1,136 @@
+@import url("./reset.css");
+
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --very-dark-blackish-blue-50: hsla(219, 29%, 14%, 50%);
+  --white: hwb(0 100% 0%);
+  --white-50: hsla(0, 0%, 100%, 50%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+* {
+  font-size: 13pt;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+.bg-moderate-violet {
+  color: var(--white);
+  background-color: var(--moderate-violet);
+}
+.bg-very-dark-grayish-blue {
+  color: var(--white);
+  background-color: var(--very-dark-grayish-blue);
+}
+.bg-very-dark-blackish-blue {
+  color: var(--white);
+  background-color: var(--very-dark-blackish-blue);
+}
+.bg-white {
+  background-color: var(--white);
+}
+
+body {
+  background: var(--light-grayish-blue);
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.card {
+  max-width: 20.625rem;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+  border-radius: 0.3125rem;
+  padding: 2rem;
+}
+.person {
+  display: flex;
+  align-items: center;
+}
+.person > img {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+.person-info {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.person-info > span {
+  line-height: 1.5rem;
+}
+.person-info--light > span:nth-child(1) {
+  font-weight: 600;
+  color: var(--white);
+}
+.person-info--light > span:nth-child(2) {
+  font-weight: 500;
+  color: var(--white-50);
+}
+.person-info--dark > span:nth-child(1) {
+  font-weight: 600;
+  color: var(--very-dark-blackish-blue);
+}
+.person-info--dark > span:nth-child(2) {
+  font-weight: 500;
+  color: var(--very-dark-blackish-blue-50);
+}
+.card-headline {
+  margin-top: 1.5rem;
+  font-size: 20pt;
+  font-weight: 500;
+}
+.card-quote {
+  margin-top: 1.5rem;
+  font-weight: 600;
+}
+.card-headline--light {
+  color: var(--white);
+}
+.card-headline--dark {
+  color: var(--very-dark-blackish-blue);
+}
+.card-quote--light {
+  color: var(--white-50);
+}
+.card-quote--dark {
+  color: var(--very-dark-blackish-blue-50);
+}
+@media only screen and (min-width: 880px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem 2rem;
+    grid-template-areas:
+      "quote-daniel quote-daniel quote-jonathan quote-kira"
+      "quote-jeanette quote-patrick quote-patrick quote-kira";
+  }
+  .quote-daniel {
+    grid-area: quote-daniel;
+  }
+  .quote-jonathan {
+    grid-area: quote-jonathan;
+  }
+  .quote-kira {
+    grid-area: quote-kira;
+  }
+  .quote-jeanette {
+    grid-area: quote-jeanette;
+  }
+  .quote-patrick {
+    grid-area: quote-patrick;
+  }
+  .card {
+    max-width: initial;
+  }
+}
